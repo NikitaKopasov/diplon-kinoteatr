@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth-fon {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0A0C78;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+    overflow: hidden;
+}
+
+/* auth-card и слайдер */
+.auth-card {
+    grid-column: span 8 / span 8;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.authImg {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s ease;
+}
+
+.visible {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hidden {
+    opacity: 0;
+    z-index: 1;
+}
+
+.fade-in {
+    opacity: 1;
+    z-index: 3;
+}
+
+.fade-out {
+    opacity: 0;
+    z-index: 2;
+}
+
+/* форма */
+.form-reg {
+    grid-column: span 6 / span 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-auth-container {
+    padding: 57px;
+    background-color: #DDD6FF;
+    border-radius: 72px;
+}
+
+.button-auth-reg {
+    background-color: #002BFF4F;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 33px;
+}
+
+.button-auth-reg button {
+    padding: 10px 50px;
+}
+
+.active {
+    border-radius: 33px;
+    border: none;
+    background-color: #1D00A1;
+    color: white;
+    font-size: 18px;
+}
+
+.passive {
+    font-size: 18px;
+    color: #1D00A1;
+    background-color: rgba(29, 0, 161, 0);
+    border: none;
+}
+
+.uname, .youpasswd,
+.youname, .yousurname, .youemail, .younumber, .you-reg-login, .you-reg-password {
+    font-size: 20px;
+    color: #000000;
+}
+
+/* форма входа */
+.form-login {
+    margin-top: 15px;
+}
+
+.input-username {
+    margin-top: 12px;
+    width: 435px;
+    height: 54px;
+    border-radius: 40px;
+    border: solid 1px #1D00A1;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.form-password {
+    margin-top: 30px;
+}
+
+.container-forgot-password, .button-auth-block {
+    margin-top: 20px;
+    text-align: end;
+}
+
+.button-auth {
+    padding: 12px 97px;
+    font-size: 18px;
+    color: white;
+    border-radius: 36px;
+    border: none;
+    background-color: #1D00A1;
+}
+
+.forgot-password {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+/* форма регистрации */
+.form-name {
+    margin-top: 15px;
+}
+
+.input-name, .input-surname, .input-email, .input-number, .input-reg-login {
+    margin-top: 12px;
+    width: 435px;
+    height: 40px;
+    border-radius: 40px;
+    border: solid 1px #1D00A1;
+    padding-left: 30px;
+    font-size: 19px;
+}
+
+.input-password {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    border-radius: 40px;
+    background-color: white;
+    border: solid 1px #1D00A1;
+    height: 54px;
+}
+.input-password input {
+    padding-left: 30px;
+    border: none;
+    font-size: 19px;
+    border-radius: 40px;
+    width: 395px;
+}
+.input-password div {
+    margin-bottom: 15px;
+}
+
+.input-reg-password {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    border-radius: 40px;
+    background-color: white;
+    border: solid 1px #1D00A1;
+    height: 40px;
+}
+.input-reg-password input {
+    padding-left: 30px;
+    border: none;
+    font-size: 19px;
+    border-radius: 40px;
+    width: 395px;
+}
+.input-reg-password div {
+    margin-bottom: 15px;
+}
+
+.form-surname, .form-email, .form-number, .form-reg-login {
+    margin-top: 13px;
+}
+
+.button-registration-block {
+    text-align: end;
+    margin-top: 38px;
+}
+
+.button-registration {
+    padding: 13px 52px;
+    font-size: 18px;
+    color: white;
+    border-radius: 36px;
+    border: none;
+    background-color: #1D00A1;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+.eye-icon {
+    position: absolute;
+    cursor: pointer;
+}
+

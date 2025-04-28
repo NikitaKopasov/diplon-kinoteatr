@@ -1,0 +1,91 @@
+/* dropdown */
+.dropdown {
+    position: relative;
+    
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+}
+.logo{
+    cursor: pointer;
+    margin-left: 294px;
+
+}
+.header-icons
+{
+    margin-right: 294px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(29, 0, 161, 0.76);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    color: white;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+.category-mult {
+    cursor: pointer;
+}
+.header-sub-btn {
+    cursor: pointer;
+    padding: 8px 20px;
+    background: linear-gradient(to right, #002BFF, #733CE0D1, #FF00A1);
+    border-radius: 30px;
+    margin-left: 100px;
+}
+.header-sub-btn:hover {
+    background: linear-gradient(to right, #FF00A1, #733CE0D1, #002BFF);
+}
+.icon {
+    margin-right: 30px;
+}
+.icon-item {
+    height: 40px;
+    width: 40px;
+}
+
+#last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+#last span {
+    margin-top: 3px;
+    font-size: 12px;
+}
+.account {
+    width: 30px;
+    height: 30px;
+}
+.dropdown-content div {
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.dropdown-content div:hover {
+    background-color: rgba(29, 0, 161, 1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.header-service, .header-contacts
+{
+    font-size: 24px;
+    border: none;
+    color: white;
+    background-color: rgba(1, 1, 1, 0);
+}

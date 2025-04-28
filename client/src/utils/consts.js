@@ -1,0 +1,4 @@
+export const AUTH_ROUTE = '/auth'
+export const MAIN_ROUTE = '/'
+export const CATEGORY_ROUTE = '/category'
+export const PROFILE_ROUTE = '/profile'
