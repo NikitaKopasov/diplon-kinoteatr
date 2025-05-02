@@ -29,7 +29,7 @@ const Main = () => {
     const {user} = useContext(Context);
     const navigate = useNavigate()
     return(
-       <div className="app">
+       <div className="app-main">
             <NavBar></NavBar>
             <section className="main-page-container">
                 {categories.length > 0 ? (

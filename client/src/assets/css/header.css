@@ -13,12 +13,12 @@
 }
 .logo{
     cursor: pointer;
-    margin-left: 294px;
+    margin-left: 28vh;
 
 }
 .header-icons
 {
-    margin-right: 294px;
+    margin-right: 28vh;
 }
 .dropdown-content {
     display: none;
@@ -29,6 +29,7 @@
     color: white;
     font-weight: 900;
     z-index: 1;
+    font-size: 18px;
 }
 
 .header-icons {
@@ -40,10 +41,11 @@
 }
 .header-sub-btn {
     cursor: pointer;
-    padding: 8px 20px;
+    padding: 7px 15px;
     background: linear-gradient(to right, #002BFF, #733CE0D1, #FF00A1);
     border-radius: 30px;
-    margin-left: 100px;
+    margin-left: 50px;
+    font-size: 20px;
 }
 .header-sub-btn:hover {
     background: linear-gradient(to right, #FF00A1, #733CE0D1, #002BFF);
@@ -88,4 +90,5 @@
     border: none;
     color: white;
     background-color: rgba(1, 1, 1, 0);
+    margin-left: 2vh;
 }

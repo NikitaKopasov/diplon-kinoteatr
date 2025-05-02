@@ -1,16 +1,38 @@
-.app
+.profile
 {
     background-image: url("../images/profileFon.jpg");
     background-size: cover; 
     background-position: center; 
-    min-height: 120vh;
+    min-height: 135vh;
 }
 .fon-profile {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
+/*Добавление карты*/
+.profil-info.full-width {
+    width: 140vh;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 2vh;
+}
+.profil-info.full-width::before
+{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    padding: 3px; 
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+/*         */
 .profil-category {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
     backdrop-filter: blur(100px);
@@ -20,12 +42,13 @@
 }
 
 .profil-info {
-    position: relative; /* нужно для позиционирования псевдоэлемента */
+    position: relative; 
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(100px);
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    overflow: hidden; /* чтобы псевдоэлемент не выходил за рамки */
+    overflow: hidden; 
+    width: 110vh;
 }
 
 /* Псевдоэлемент с градиентной рамкой */
@@ -85,7 +108,7 @@
 {
     padding-top: 7vh;
     padding-left: 3vw;
-    display: flex;
+    
 }
 .zag-info
 {
@@ -123,7 +146,7 @@
 .card-add
 {
     margin-left: 9vw;
-    margin-top: 9vh;
+    margin-top: 5vh;
     margin-right: 10vw;
 }
 .container-sub-arrange
@@ -147,4 +170,115 @@
     border-radius: 31px;
     background-color: rgba(217, 217, 217, 1);
     
+}
+.profile-main-wrapper
+{
+    display: flex;
+}
+
+/*История просмотров фильмов*/
+
+.history-buttons {
+    display: flex;
+    margin-right: 7vw;
+    margin-top: 3vh;
+}
+
+.history-buttons > *:not(:first-child) {
+    margin-left: 3vw; /* отступ только у всех, кроме первой */
+}
+
+.button-history {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(217, 217, 217, 0);
+    border: none;
+    padding: 1vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button-history-viewing {
+    flex-direction: column;
+}
+
+/*Страница подписок кинотеатра*/
+.subscriptions-info {
+    position: relative;
+    width: 33vh;
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.block-sub {
+    position: absolute;
+    top: -1vh; /* "выпирает" вверх от контейнера */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1vh; /* увеличим, чтобы было видно */
+    width: 9vh;
+    background-color: rgba(29, 0, 161, 1);
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+}
+
+.container-sun-info {
+    height: 35vh;
+    width: 33vh;
+    background-color: rgba(221, 235, 245, 0.6);
+    border-radius: 12px;
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: rgba(29, 0, 161, 1);
+    position: relative;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 3px dashed rgba(29, 0, 161, 1);
+    width: 30.5vh;
+    margin-left: 1vh;
+    position: absolute;
+}
+
+.button-sun-info {
+    height: 13vh;
+    width: 33vh;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: rgba(221, 235, 245, 0.6);
+    border-width: 0 3px 3px 3px;
+    border-style: solid;
+    border-color: rgba(29, 0, 161, 1);
+    border-radius: 12px;
+}
+.card-sub
+{
+    display: flex;
+}
+.card-sub .subscriptions-info:not(:first-child) {
+    margin-left: 6vh;
+}
+
+/*форма редактирование профиля*/
+
+.edit-profile
+{
+    background-color: rgba(217, 217, 217, 0);
+    border-width: 2px 4px 4px 3px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 19px;
+    padding: 1vh 2vh;
+    font-size: 24px;
+    margin-bottom: 3vh;
+    color: white;
+    width: 53vh;
+}
+.form-edit
+{
+    margin-top: 4vh;
 }

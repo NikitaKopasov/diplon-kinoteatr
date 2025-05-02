@@ -5,7 +5,10 @@ import CategoryPage from "../pages/category"
 import Profile from "../pages/profile"
 
 export const authRoutes = [
-
+    {
+        path: PROFILE_ROUTE,
+        Component: Profile
+    }
 ]
 
 export const publicRoutes = [
@@ -21,8 +24,4 @@ export const publicRoutes = [
         path: CATEGORY_ROUTE + '/:category',
         Component: CategoryPage
     },
-     {
-        path: PROFILE_ROUTE,
-        Component: Profile
-     }
 ]

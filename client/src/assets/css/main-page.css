@@ -3,3 +3,10 @@
     margin: auto;
     margin-top: 30px;
 }
+.app-main
+{
+    background-image: url("../images/bg-main.jpg");
+    background-size: cover; 
+    background-position: center;
+    min-height: 572vh;
+}
