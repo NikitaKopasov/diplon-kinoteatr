@@ -1,0 +1,88 @@
+.film-app {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/fonfilm.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 250vh;
+}
+.title-film
+{
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+
+}
+.container-title
+{
+    text-align: center;
+}
+.poster-film
+{
+    width: 26vh;
+    height: 38vh;
+    margin-left: 15vh;
+}
+.film-info
+{
+    margin-top: 5vh;
+    display: flex;
+}
+.film-date
+{
+    color: white;
+    margin-left: 4vh;
+}
+
+.read-more-btn {
+    background-color: rgba(29, 0, 161, 1);
+    border: none;
+    color: white;
+    height: 6vh;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 4vh;
+}
+.film-description
+{
+    width: 120vh;
+    margin-top: 2vh;
+    font-size: 18px;
+    font-weight: 700;
+}
+.Info-film
+{
+    margin-top: 6vh;
+    font-size: 20px;
+    font-weight: 500;
+}
+.zag-description
+{
+    font-weight: 900;
+    font-size: 28px;
+}
+.pleer {
+    width: 127vh;
+    height: 70vh;
+    background-color: rgba(217, 217, 217, 1);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 8vh;
+}
+
+.pleer hr {
+    width: 100%;
+    border: solid black 2px;
+    position: absolute;
+    margin-top: 63vh;
+}
+.otziv
+{
+    margin-top: 7vh;
+}
+.title-otziv
+{
+    font-weight: 900;
+    font-size: 28px;
+}

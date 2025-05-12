@@ -18,3 +18,9 @@ export const registerUser = async(candidate) => {
 
     return message;
 }
+export const updateUserInfo = async (userData) => {
+    const { data } = await $authHost.post('user/update', userData);
+    
+    localStorage.setItem('token', data.token);
+    return jwtDecode(data.token);
+};

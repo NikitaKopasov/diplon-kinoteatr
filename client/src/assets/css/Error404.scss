@@ -1,0 +1,95 @@
+.Error-fon {
+    background-image: url("../images/404.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.info-error {
+    display: flex;
+    align-items: center; /* выравнивание по вертикали */
+    margin-left: 40vh;
+    margin-bottom: 15vh;
+}
+
+.text-error {
+    text-align: center;
+    font-size: 76px;
+    font-weight: 900;
+}
+
+.code-error {
+    font-size: 126px;
+    font-weight: 900;
+    text-align: center;
+    margin-left: 5vh;
+}
+.number-error
+{
+    margin-left: 40vh;
+}
+.back-button
+{
+    position: absolute;
+    top: 3vh;
+    left: 13vh;
+    font-size: 32px;
+    font-weight: 900;
+    border: none;
+    background-color: rgba(1,1,1,0);
+    color: white;
+}
+/* Адаптация под крупные экраны (от 1440px) */
+@media (min-width: 1440px) {
+    .text-error {
+        font-size: 76px;
+    }
+
+    .code-error {
+        font-size: 126px;
+    }
+
+    .back-button {
+        font-size: 32px;
+        top: 3vh;
+        left: 13vh;
+    }
+}
+
+/* Адаптация под средние экраны (от 768px до 1439px) */
+@media (max-width: 1439px) and (min-width: 768px) {
+    .text-error {
+        font-size: 48px;
+    }
+
+    .code-error {
+        font-size: 96px;
+    }
+
+    .back-button {
+        font-size: 24px;
+    }
+}
+
+/* Адаптация под мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+    .text-error {
+        font-size: 32px;
+    }
+
+    .code-error {
+        font-size: 64px;
+    }
+
+    .back-button {
+        font-size: 20px;
+    }
+
+    .info-error {
+        flex-direction: column;
+    }
+}

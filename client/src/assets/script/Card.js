@@ -2,11 +2,11 @@ import React from "react";
 
 const Card = ({
   isFlipped,
-  cardNumber,
-  cardName,
-  cardMonth,
-  cardYear,
-  cardCvv,
+  cardOwner,
+  cardNumber, 
+  activeMonth,
+  activeYear,
+  cvcCvv,
   cardType,
   currentCardBackground
 }) => {
@@ -44,17 +44,17 @@ const Card = ({
             <label className="card-item__info">
               <div className="card-item__holder">Владелец карты</div>
               <div className="card-item__name">
-                {cardName || "Имя Фамилия"}
+                {cardOwner || "Имя Фамилия"}
               </div>
             </label>
             <div className="card-item__date">
               <label className="card-item__dateTitle">Срок</label>
               <label className="card-item__dateItem">
-                {cardMonth || "MM"}
+                {activeMonth || "MM"}
               </label>
               /
               <label className="card-item__dateItem">
-                {cardYear ? cardYear.toString().slice(2, 4) : "ГГ"}
+                {activeYear ? activeYear.toString().slice(2, 4) : "ГГ"}
               </label>
             </div>
           </div>
@@ -73,7 +73,7 @@ const Card = ({
         <div className="card-item__cvv">
           <div className="card-item__cvvTitle">CVC2/CVV2</div>
           <div className="card-item__cvvBand">
-            {cardCvv.replace(/./g, "*")}
+            {cvcCvv.replace(/./g, "*")}
           </div>
           <div className="card-item__type">
             <img

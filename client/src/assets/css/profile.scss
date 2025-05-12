@@ -1,0 +1,440 @@
+.profile
+{
+    background-image: url("../images/profileFon.jpg");
+    background-size: cover; 
+    background-position: center; 
+    min-height: 135vh;
+}
+.fon-profile {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+/*Добавление карты*/
+.profil-info.full-width {
+    width: 140vh;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 2vh;
+}
+.profil-info.full-width::before
+{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    padding: 3px; 
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+/*         */
+.profil-category {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    backdrop-filter: blur(100px);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 2vh;
+}
+
+.profil-info {
+    position: relative; 
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(100px);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden; 
+    width: 110vh;
+}
+
+/* Псевдоэлемент с градиентной рамкой */
+.profil-info::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    padding: 3px; 
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none; 
+}
+
+.logoProfil
+{
+    border-radius: 50%;
+    width: 13vh;
+    height: 13vh;
+}
+.container-logo
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+.name-profile
+{
+    color: rgba(25, 0, 166, 1);
+    font-size: 24px;
+    font-weight: 700;
+    background-color: rgba(217, 217, 217, 0);
+    border: none;
+}
+.button-cat-profil
+{
+    font-size: 20px;
+    color: rgba(25, 0, 166, 1);
+    background-color: rgba(255, 255, 255, 0);
+    margin-bottom: 3vh;
+    border: none;
+    font-weight: 400;
+}
+.cont-prof{
+    padding-top: 3vh;
+    padding-bottom: 6vh;
+    text-align: center;
+}
+.container-button-cat-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profil-info
+{
+    padding-top: 7vh;
+    padding-left: 3vw;
+    
+}
+.zag-info
+{
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+.profile-data
+{
+    color: rgba(255, 255, 255, 1);
+    border-width: 2px 4px 4px 3px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 19px;
+    padding: 1vh 2vh;
+    font-size: 24px;
+    margin-bottom: 3vh;
+}
+.info-profile-user
+{
+    margin-top: 5vh;
+}
+.card-button {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    border: none;
+    background-color: transparent;
+}
+.card-button span {
+    font-size: 20px; 
+    color: white;
+    font-weight: 700;
+}
+
+.container-sub-arrange
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13vh;
+    margin-bottom: 1vh;
+}
+.sub-arrange
+{
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(29, 0, 161, 1);
+    padding: 42px 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 31px;
+    background-color: rgba(217, 217, 217, 1);
+    
+}
+.info-sub-title
+{
+    margin-bottom: 1vh;
+}
+.sub-arrange-active
+{
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(29, 0, 161, 1);
+    padding: 35px 35px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 31px;
+    background-color: rgba(217, 217, 217, 1);
+}
+.info-sub-date
+{
+    color: black;
+    font-size: 17px;
+
+    &__info-sub-date1{
+        color: black;
+        font-size: 17px;
+        margin-top: 1vh;
+    }
+}
+.profile-main-wrapper
+{
+    display: flex;
+}
+
+/*История просмотров фильмов*/
+
+.history-buttons {
+    display: flex;
+    margin-right: 7vw;
+    margin-top: 3vh;
+}
+
+.history-buttons > *:not(:first-child) {
+    margin-left: 3vw; /* отступ только у всех, кроме первой */
+}
+
+.button-history {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(217, 217, 217, 0);
+    border: none;
+    padding: 1vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button-history-viewing {
+    flex-direction: column;
+}
+
+/*Страница подписок кинотеатра*/
+.subscriptions-info {
+    position: relative;
+    width: 33vh;
+    margin-top: 6vh;
+}
+
+.block-sub {
+    position: absolute;
+    top: -1vh; /* "выпирает" вверх от контейнера */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1vh; /* увеличим, чтобы было видно */
+    width: 9vh;
+    background-color: rgba(29, 0, 161, 1);
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+}
+
+.container-sun-info {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    width: 33vh;
+    background-color: rgba(221, 235, 245, 0.6);
+    border-radius: 12px;
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: rgba(29, 0, 161, 1);
+    position: relative;
+    padding: 1vh;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 3px dashed rgba(29, 0, 161, 1);
+    width: 30.5vh;
+    margin-left: 1vh;
+    position: absolute;
+}
+
+.button-sun-info {
+    height: 13vh;
+    width: 33vh;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: rgba(221, 235, 245, 0.6);
+    border-width: 0 3px 3px 3px;
+    border-style: solid;
+    border-color: rgba(29, 0, 161, 1);
+    border-radius: 12px;
+}
+.card-sub
+{
+    display: flex;
+}
+.card-sub .subscriptions-info:not(:first-child) {
+    margin-left: 6vh;
+}
+
+.sub-title
+{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 2vh;
+}
+.sub-duration-description
+{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 6vh;
+}
+.new-price
+{
+    font-size: 24px;
+    font-weight: 600;
+}
+.old-price
+{
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+.old-new-price
+{
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(255, 0, 0, 1);
+}
+.sub-price-wrapper {
+    margin-top: auto; 
+}
+.sub-content {
+    margin-bottom: auto; 
+}
+/*форма редактирование профиля*/
+
+.edit-profile
+{
+    background-color: rgba(217, 217, 217, 0);
+    border-width: 2px 4px 4px 3px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 19px;
+    padding: 1vh 2vh;
+    font-size: 24px;
+    margin-bottom: 3vh;
+    color: white;
+    width: 53vh;
+}
+.form-edit
+{
+    margin-top: 4vh;
+}
+.back-card
+{
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(217, 217, 217, 0);
+    border: none;
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+.CardUser
+{
+    width: 40vh;
+    height: 25vh;
+    border-radius: 30px;
+    margin-right: 10vh;
+}
+.card-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+.card-preview {
+    position: relative;
+    display: inline-block;
+    max-width: 40vh;
+    height: auto;
+    margin: 0 2vh;
+}
+
+.card-background {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.card-number {
+    position: absolute;
+    top: 47%; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card-owner {
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+
+.slider-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-arrow img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-actions
+{
+    margin-left: 10vw;
+    margin-top: 3vh;
+}
+.delete-card-btn
+{
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(217, 217, 217, 0);
+    margin-bottom: 3vh;
+}
+.save-profile
+{
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: rgba(217, 217, 217, 0);
+    border: none;
+    margin-left: 18vh ;
+}
+

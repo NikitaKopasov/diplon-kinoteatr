@@ -7,7 +7,7 @@ import notifications from "../assets/images/notifications.png"
 import persaccount from "../assets/images/PersAccount.png"
 import { Context } from '..';
 import { useNavigate } from 'react-router-dom';
-import { AUTH_ROUTE, CATEGORY_ROUTE, MAIN_ROUTE, PROFILE_ROUTE } from '../utils/consts';
+import { AUTH_ROUTE, CATEGORY_ROUTE, MAIN_ROUTE, MYSUB_ROUTE, PROFILE_ROUTE } from '../utils/consts';
 
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
@@ -61,9 +61,17 @@ const NavBar = () => {
             <button className='header-contacts'>
                 Контакты
             </button>
-            <div className='header-sub-btn'>
-                Оформить подписку
-            </div>
+            {
+                user.isSubscribe ? (
+                    <div className='header-sub-btn' onClick={() => {navigate(MYSUB_ROUTE)}}>
+                        Моя подписка
+                    </div>
+                ) : (
+                    <div className='header-sub-btn' onClick={() => {navigate(PROFILE_ROUTE, { state: { section: 'subscriptions' } }); }}>
+                        Оформить подписку
+                    </div>
+                )
+            }
             <div className='header-icons'>
                 <div className='icon'>
                     <img className='icon-item' src={search}/>
