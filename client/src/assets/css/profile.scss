@@ -1,14 +1,22 @@
 .profile
 {
-    background-image: url("../images/profileFon.jpg");
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
     background-size: cover; 
     background-position: center; 
     min-height: 135vh;
 }
+@font-face {
+    src: url(../fonts/Poppins-Light.ttf);
+    font-family: 'Poppins';
+    
+}
+input, button, select, textarea {
+  font-family: 'Poppins';
+}
 .fon-profile {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 20vh;
 }
 /*Добавление карты*/
 .profil-info.full-width {
@@ -49,6 +57,7 @@
     border-bottom-right-radius: 30px;
     overflow: hidden; 
     width: 110vh;
+    margin-right: 5vh;
 }
 
 /* Псевдоэлемент с градиентной рамкой */
@@ -87,6 +96,7 @@
     font-weight: 700;
     background-color: rgba(217, 217, 217, 0);
     border: none;
+    font-family: 'Poppins';
 }
 .button-cat-profil
 {
@@ -96,6 +106,7 @@
     margin-bottom: 3vh;
     border: none;
     font-weight: 400;
+    font-family: 'Poppins';
 }
 .cont-prof{
     padding-top: 3vh;
@@ -118,6 +129,7 @@
     font-size: 42px;
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
+    font-family: 'Poppins';
 }
 .profile-data
 {
@@ -129,6 +141,7 @@
     padding: 1vh 2vh;
     font-size: 24px;
     margin-bottom: 3vh;
+    font-family: 'Poppins';
 }
 .info-profile-user
 {
@@ -145,8 +158,33 @@
     font-size: 20px; 
     color: white;
     font-weight: 700;
+    font-family: 'Poppins';
 }
-
+.card-button-add-no
+{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    border: none;
+    background-color: transparent;
+    margin-left: 18vh;
+    margin-top: 5vh;
+}
+.card-button-add-no span {
+    font-size: 20px; 
+    color: white;
+    font-weight: 700;
+    font-family: 'Poppins';
+}
+.no-cards-message
+{
+    font-size: 20px; 
+    color: white;
+    font-weight: 700;
+    font-family: 'Poppins';
+    margin-left: 16vh;
+    margin-top: 5vh;
+}
 .container-sub-arrange
 {
     display: flex;
@@ -167,6 +205,7 @@
     align-items: center;
     border-radius: 31px;
     background-color: rgba(217, 217, 217, 1);
+    font-family: 'Poppins';
     
 }
 .info-sub-title
@@ -184,16 +223,19 @@
     flex-direction: column;
     border-radius: 31px;
     background-color: rgba(217, 217, 217, 1);
+    font-family: 'Poppins';
 }
 .info-sub-date
 {
     color: black;
     font-size: 17px;
+    font-family: 'Poppins';
 
     &__info-sub-date1{
         color: black;
         font-size: 17px;
         margin-top: 1vh;
+        font-family: 'Poppins';
     }
 }
 .profile-main-wrapper
@@ -224,6 +266,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: 'Poppins';
 }
 
 .button-history-viewing {
@@ -281,6 +324,7 @@
     border-style: solid;
     border-color: rgba(29, 0, 161, 1);
     border-radius: 12px;
+    font-family: 'Poppins';
 }
 .card-sub
 {
@@ -295,29 +339,34 @@
     font-size: 24px;
     font-weight: 600;
     margin-top: 2vh;
+    font-family: 'Poppins';
 }
 .sub-duration-description
 {
     font-size: 18px;
     font-weight: 600;
     margin-top: 6vh;
+    font-family: 'Poppins';
 }
 .new-price
 {
     font-size: 24px;
     font-weight: 600;
+    font-family: 'Poppins';
 }
 .old-price
 {
     font-size: 18px;
     font-weight: 600;
     text-decoration: line-through;
+    font-family: 'Poppins';
 }
 .old-new-price
 {
     font-size: 24px;
     font-weight: 600;
     color:rgba(255, 0, 0, 1);
+    font-family: 'Poppins';
 }
 .sub-price-wrapper {
     margin-top: auto; 
@@ -339,6 +388,7 @@
     margin-bottom: 3vh;
     color: white;
     width: 53vh;
+    font-family: 'Poppins';
 }
 .form-edit
 {
@@ -353,6 +403,7 @@
     border: none;
     margin-top: 2vh;
     margin-left: 2vh;
+    font-family: 'Poppins';
 }
 .CardUser
 {
@@ -416,8 +467,16 @@
 
 .card-actions
 {
-    margin-left: 10vw;
+    
     margin-top: 3vh;
+}
+.del-activ-card
+{
+    margin-left: 5vw;
+}
+.add-card-button
+{
+    margin-left: 10vw;
 }
 .delete-card-btn
 {
@@ -427,6 +486,7 @@
     color: white;
     background-color: rgba(217, 217, 217, 0);
     margin-bottom: 3vh;
+    font-family: 'Poppins';
 }
 .save-profile
 {
@@ -436,5 +496,145 @@
     background-color: rgba(217, 217, 217, 0);
     border: none;
     margin-left: 18vh ;
+    font-family: 'Poppins';
+}
+.activate-card-btn {
+  
+  background-color: rgba(217, 217, 217, 0);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 2vh;
+  font-weight: bold;
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins';
+
+  &.active {
+    
+    color: white;
+  }
+
+}
+.card-active-label
+{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins';
+    margin-left: 20vh;
+    margin-top: 3vh;
 }
 
+/* 
+   📱 Планшеты (481px – 768px)
+ */
+@media (min-width: 481px) and (max-width: 768px) {
+  .profile-main-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profil-info,
+  .profil-category,
+  .profil-info.full-width {
+    width: 85vw;
+    padding: 3vw;
+  }
+
+  .logoProfil {
+    width: 16vh;
+    height: 16vh;
+  }
+
+  .zag-info {
+    font-size: 32px;
+  }
+
+  .profile-data,
+  .edit-profile {
+    font-size: 20px;
+    width: 70vw;
+  }
+
+  .CardUser {
+    width: 60vw;
+    height: auto;
+  }
+
+  .container-sub-arrange {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sub-arrange,
+  .sub-arrange-active {
+    padding: 30px 40px;
+    margin-bottom: 2vh;
+    font-size: 22px;
+  }
+
+  .card-sub {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscriptions-info {
+    width: 75vw;
+  }
+
+  .container-sun-info {
+    width: 100%;
+  }
+
+  .button-sun-info {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .save-profile {
+    margin-left: 0;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* 
+   💻 Небольшие экраны (769px – 1024px)
+ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profil-info,
+  .profil-info.full-width {
+    width: 90vh;
+  }
+
+  .CardUser {
+    width: 50vh;
+    height: 30vh;
+  }
+
+  .profile-data,
+  .edit-profile {
+    width: 50vh;
+    font-size: 22px;
+  }
+
+  .subscriptions-info {
+    width: 45vh;
+  }
+
+  .container-sun-info {
+    width: 100%;
+    height: auto;
+  }
+
+  .button-sun-info {
+    font-size: 26px;
+    height: auto;
+    padding: 2vh;
+  }
+
+  .zag-info {
+    font-size: 36px;
+  }
+}

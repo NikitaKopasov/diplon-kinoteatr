@@ -1,0 +1,69 @@
+.creators-fon
+{
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
+    background-size: cover; 
+    background-position: center;
+    min-height: 170vh;
+}
+.creators-container
+{
+    padding-top: 17vh;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
+.title
+{
+    color: white;
+    font-weight: 900;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 5vh;
+    font-family: 'Poppins';
+}
+
+.creators
+{
+    display: flex;
+    margin-top: 8vh;
+}
+.creators-name
+{
+    color: white;
+    font-weight: 900;
+    font-size: 26px;
+    width: 10vh;
+    font-family: 'Poppins';
+    
+}
+.uxUI-Front-Back
+{
+    width: 30vh;
+    height: auto;
+}
+.title-uxUI-Front-Back
+{
+    color: white;
+    font-weight: 900;
+    font-size: 26px;
+    margin-bottom: 4vh;
+    font-family: 'Poppins';
+}
+.text-uxUI-Front-Back
+{
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: 'Poppins';
+}
+.team-creators
+{
+    margin-left: 28vh;
+}
+.title-text
+{
+    margin-left: 5vh;
+    width: 115vh;
+    text-align: justify;
+}

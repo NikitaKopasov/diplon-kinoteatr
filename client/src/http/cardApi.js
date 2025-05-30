@@ -15,4 +15,11 @@ export const addUserCard = async(data) => {
 export const deleteUserCard = async (cardId) => {
     const response = await $authHost.post('/user/deleteCard', { id: cardId });
     return response;
+}
+export const setActiveUserCard = async (userId, cardId) => {
+    const response = await $authHost.post("/user/setActiveCard", {
+        userId,
+        cardId,
+    });
+    return response.data;
 };

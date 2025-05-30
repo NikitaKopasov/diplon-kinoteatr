@@ -1,0 +1,105 @@
+.info-sub-admin {
+  padding-top: 20vh;
+  padding-left: 16vw;
+  padding-right: 16vw;
+}
+
+.zag-sub-admin {
+  color: white;
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  color: white;
+
+  thead {
+    th {
+      padding: 10px;
+      font-weight: 600;
+      color: white;
+      border: 1px solid white;
+      text-align: center;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 10px 12px;
+        border: 1px solid white;
+        color: white;
+        text-align: center;
+      }
+
+      td:nth-child(2),
+      td:nth-child(4),
+      td:nth-child(7) {
+        text-align: left; // Название, Описание и Действия — выравнивание по левому краю
+      }
+
+      .edit-btn,
+      .delete-btn {
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        margin-left: 4vh;
+      }
+    }
+  }
+}
+
+.edit-del-icon {
+  width: 4vh;
+  height: 4vh;
+}
+.add-sub-btn {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.sub-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  input {
+    flex: 1 1 30%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}

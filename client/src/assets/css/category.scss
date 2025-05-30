@@ -1,0 +1,24 @@
+.title-category
+{
+    color: white;
+    font-weight: 900;
+    font-size: 26px;
+    text-align: center;
+    padding-top: 17vh;
+    font-family: 'Poppins';
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
+.title-category h1 
+{
+    margin-bottom: 6vh;
+}
+.category-main
+{
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
+    background-size: cover; 
+    background-position: center;
+    min-height: 170vh;
+}

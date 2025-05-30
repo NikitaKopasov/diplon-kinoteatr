@@ -1,16 +1,23 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
-
 .auth-fon {
     height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #0A0C78;
 }
-
+.form-auth
+{
+    font-family: 'Poppins';
+}
 .auth-container {
     display: grid;
     grid-template-columns: repeat(14, minmax(0, 1fr));
@@ -61,6 +68,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .form-auth-container {
@@ -87,6 +95,7 @@
     background-color: #1D00A1;
     color: white;
     font-size: 18px;
+    font-family: 'Poppins';
 }
 
 .passive {
@@ -94,17 +103,20 @@
     color: #1D00A1;
     background-color: rgba(29, 0, 161, 0);
     border: none;
+    font-family: 'Poppins';
 }
 
 .uname, .youpasswd,
 .youname, .yousurname, .youemail, .younumber, .you-reg-login, .you-reg-password {
     font-size: 20px;
     color: #000000;
+    font-family: 'Poppins';
 }
 
 /* форма входа */
 .form-login {
     margin-top: 15px;
+    font-family: 'Poppins';
 }
 
 .input-username {
@@ -115,6 +127,7 @@
     border: solid 1px #1D00A1;
     padding-left: 30px;
     font-size: 20px;
+    font-family: 'Poppins';
 }
 
 .form-password {
@@ -125,7 +138,10 @@
     margin-top: 20px;
     text-align: end;
 }
-
+.button-auth-reg
+{
+    font-family: 'Poppins';
+}
 .button-auth {
     padding: 12px 97px;
     font-size: 18px;
@@ -133,11 +149,13 @@
     border-radius: 36px;
     border: none;
     background-color: #1D00A1;
+    font-family: 'Poppins';
 }
 
 .forgot-password {
     font-size: 17px;
     font-weight: 300;
+    font-family: 'Poppins';
 }
 
 /* форма регистрации */
@@ -153,6 +171,7 @@
     border: solid 1px #1D00A1;
     padding-left: 30px;
     font-size: 19px;
+    font-family: 'Poppins';
 }
 
 .input-password {
@@ -163,6 +182,7 @@
     background-color: white;
     border: solid 1px #1D00A1;
     height: 54px;
+    font-family: 'Poppins';
 }
 .input-password input {
     padding-left: 30px;
@@ -170,6 +190,7 @@
     font-size: 19px;
     border-radius: 40px;
     width: 395px;
+    font-family: 'Poppins';
 }
 .input-password div {
     margin-bottom: 15px;
@@ -190,6 +211,7 @@
     font-size: 19px;
     border-radius: 40px;
     width: 395px;
+    font-family: 'Poppins';
 }
 .input-reg-password div {
     margin-bottom: 15px;
@@ -211,6 +233,7 @@
     border-radius: 36px;
     border: none;
     background-color: #1D00A1;
+    font-family: 'Poppins';
 }
 
 input:focus {
@@ -223,3 +246,50 @@ input:focus {
     cursor: pointer;
 }
 
+/* --- 1280px и меньше --- */
+@media (max-width: 1280px) {
+    .auth-container {
+        grid-template-columns: 1fr; /* Стек по вертикали */
+    }
+
+    .auth-card, .form-reg {
+        grid-column: span 14 / span 14;
+        width: 100%;
+        height: auto;
+    }
+
+    .form-auth-container {
+        border-radius: 40px;
+        padding: 40px;
+    }
+
+    .input-username, .input-name, .input-surname, .input-email, .input-number, .input-reg-login {
+        width: 100%;
+    }
+
+    .input-password input, .input-reg-password input {
+        width: calc(100% - 40px);
+    }
+}
+
+/* --- 1024px и меньше (планшеты) --- */
+@media (max-width: 1024px) {
+    .form-auth-container {
+        padding: 30px;
+    }
+
+    .input-username, .input-name, .input-surname, .input-email,
+    .input-number, .input-reg-login, .input-password input, .input-reg-password input {
+        font-size: 17px;
+        height: 44px;
+    }
+
+    .button-auth, .button-registration {
+        padding: 12px 50px;
+        font-size: 16px;
+    }
+
+    .active, .passive {
+        font-size: 16px;
+    }
+}

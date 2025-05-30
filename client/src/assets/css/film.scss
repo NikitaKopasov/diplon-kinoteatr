@@ -1,8 +1,16 @@
 .film-app {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/fonfilm.jpg");
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
     background-size: cover;
     background-position: center;
     min-height: 250vh;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
+.film-main-container
+{
+  padding-top: 18vh;
 }
 .title-film
 {
@@ -25,11 +33,25 @@
 {
     margin-top: 5vh;
     display: flex;
+    margin-left: 15vh;
+}
+.film-rivew
+{
+    text-align: center;
+}
+.average-rate
+{
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    margin-left: 15vh;
+    margin-top: 2vh;
 }
 .film-date
 {
     color: white;
     margin-left: 4vh;
+    width: 115vh;
 }
 
 .read-more-btn {
@@ -43,7 +65,7 @@
 }
 .film-description
 {
-    width: 120vh;
+    width: 115vh;
     margin-top: 2vh;
     font-size: 18px;
     font-weight: 700;
@@ -60,8 +82,8 @@
     font-size: 28px;
 }
 .pleer {
-    width: 127vh;
-    height: 70vh;
+    width: 115vh;
+    height: 60vh;
     background-color: rgba(217, 217, 217, 1);
     display: flex;
     flex-direction: column; 
@@ -75,7 +97,7 @@
     width: 100%;
     border: solid black 2px;
     position: absolute;
-    margin-top: 63vh;
+    margin-top: 52vh;
 }
 .otziv
 {
@@ -85,4 +107,213 @@
 {
     font-weight: 900;
     font-size: 28px;
+}
+
+.review {
+    padding: 10px;
+    
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.add-review-form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(29, 0, 161, 1);
+    border-radius: 8px;
+}
+.add-review-form h3
+{
+    margin-bottom: 2vh;
+    display: block;
+}
+.add-review-form input,
+.add-review-form textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-review-form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.review-user
+{
+    font-size: 20px;
+    margin-bottom: 1vh;
+}
+
+.average-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5vh;
+  margin-left: 14vh;
+
+  .star {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .average-value {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fbc02d;
+  }
+}
+.like-favourites
+{
+  display: flex;
+}
+.like, .favourites
+{
+  display: flex;
+  width: 22vh;
+  height: 5vh;
+  background-color: rgba(29, 0, 161, 1);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 2vh;
+  margin-right: 3vh;
+}
+.like img, .favourites img
+{
+  height: 4vh;
+  margin-left: 1vh;
+}
+.like p, .favourites p
+{
+  margin-left: 1vh;
+}
+@media (max-width: 1280px) {
+  .film-info,
+  .average-rate,
+  .film-date,
+  .film-description,
+  .pleer {
+    margin-left: 5vh;
+    width: 90%;
+  }
+
+  .poster-film {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .film-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster-film {
+    width: 30vh;
+    height: auto;
+    margin-bottom: 3vh;
+  }
+
+  .film-date,
+  .film-description,
+  .pleer {
+    width: 90%;
+  }
+
+  .average-stars {
+    margin-left: 5vh;
+  }
+
+  .title-film {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-film {
+    font-size: 32px;
+  }
+
+  .film-description,
+  .film-date,
+  .pleer {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .zag-description {
+    font-size: 22px;
+  }
+
+  .Info-film {
+    font-size: 16px;
+  }
+
+  .read-more-btn {
+    font-size: 18px;
+  }
+
+  .average-rate {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .average-stars .star {
+    width: 6vh;
+    height: 6vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-film {
+    width: 80%;
+    height: auto;
+  }
+
+  .title-film {
+    font-size: 26px;
+  }
+
+  .film-description,
+  .film-date,
+  .pleer {
+    width: 95%;
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    font-size: 16px;
+  }
+
+  .zag-description {
+    font-size: 20px;
+  }
+
+  .Info-film {
+    font-size: 14px;
+  }
+
+  .average-rate {
+    font-size: 18px;
+  }
+
+  .average-stars {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .average-stars .star {
+    width: 5vh;
+    height: 5vh;
+  }
 }

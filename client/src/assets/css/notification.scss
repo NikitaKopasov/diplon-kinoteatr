@@ -1,0 +1,28 @@
+.fon-notification
+{
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
+    background-size: cover; 
+    background-position: center;
+    min-height: 130vh;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
+.title-notification
+{
+    margin-bottom: 80vh;
+}
+
+.title-notification h1
+{
+    color: white;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 6vh;
+}
+.notification-container
+{
+    padding-top: 17vh;
+}

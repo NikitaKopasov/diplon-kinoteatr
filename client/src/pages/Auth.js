@@ -60,7 +60,7 @@ const Auth = () => {
                 const data = await getLogin(email, password)
                 user.setUser(await data);
                 user.setIsAuth(true);
-                navigate(MAIN_ROUTE)
+                navigate(MAIN_ROUTE);
                 window.location.reload()
             }
         } catch(e) {

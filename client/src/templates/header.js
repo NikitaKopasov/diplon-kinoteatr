@@ -7,7 +7,7 @@ import notifications from "../assets/images/notifications.png"
 import persaccount from "../assets/images/PersAccount.png"
 import { Context } from '..';
 import { useNavigate } from 'react-router-dom';
-import { AUTH_ROUTE, CATEGORY_ROUTE, MAIN_ROUTE, MYSUB_ROUTE, PROFILE_ROUTE } from '../utils/consts';
+import { AUTH_ROUTE, CATEGORY_ROUTE, MAIN_ROUTE, MYSUB_ROUTE, PROFILE_ROUTE, NOTIFICATION_ROUTE, SEARCH_ROUTE, ADMIN_ROUTE } from '../utils/consts';
 
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
@@ -16,7 +16,7 @@ const NavBar = () => {
     const {user} = useContext(Context)
 
     useEffect(() => {
-        getFilmCategories()
+        getFilmCategories(user.user.id)
             .then((res) => {
                 if (res) {
                     setCategories(res.data);
@@ -58,9 +58,18 @@ const NavBar = () => {
             <button className='header-service'>
                 О сервисе
             </button>
-            <button className='header-contacts'>
-                Контакты
-            </button>
+            {
+                user.user.type === 'ADMIN' ? (
+                    <div onClick={() => {
+                        navigate(ADMIN_ROUTE)
+                    }}>
+                        Администрирование
+                    </div>
+                ) : (
+                <button className='header-contacts'>
+                    Контакты
+                </button>)
+            }
             {
                 user.isSubscribe ? (
                     <div className='header-sub-btn' onClick={() => {navigate(MYSUB_ROUTE)}}>
@@ -74,10 +83,10 @@ const NavBar = () => {
             }
             <div className='header-icons'>
                 <div className='icon'>
-                    <img className='icon-item' src={search}/>
+                    <img className='icon-item' src={search} onClick={() => {navigate(SEARCH_ROUTE)}}/>
                 </div>
                 <div className='icon'>
-                    <img className='icon-item' src={notifications}/>
+                    <img className='icon-item' src={notifications} onClick={() => {navigate(NOTIFICATION_ROUTE)}}/>
                 </div>
                 <div className='icon'>
                 {

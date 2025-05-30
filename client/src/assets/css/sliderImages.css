@@ -9,6 +9,10 @@
     position: relative;
     overflow: hidden;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
 .FullArea{
     display:flex;
     width: 100%;

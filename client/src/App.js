@@ -20,16 +20,17 @@ const App =  observer(() =>  {
         } else {
           user.setIsSubscribe(false)
         }
+      }).catch((e) => {
+        user.setIsSubscribe(false)
       })
-    }).catch(e => {
-      user.setUser(false);
-      user.setIsAuth(false);
-      user.setIsSubscribe(false)}).finally(()=>{ setLoading(false) })
+    }).catch(e => {})
+      .finally(()=>{ setLoading(false) })
   },[])
+
   if (loading) {
     return <div>загрузка</div>;
   }
-
+  console.log(user)
   return (
    <BrowserRouter>
       <AppRouter />

@@ -6,13 +6,14 @@ import logoProf from '../assets/images/logoProfil.jpg'
 import card from "../assets/images/CardAdd.png"
 import CardForm from "../assets/script/CreditCardForm"
 import { GetSubTypes, getUserSub, subOrder } from '../http/subApi';
-import { getUserCard, deleteUserCard } from '../http/cardApi';
+import { getUserCard, deleteUserCard, setActiveUserCard } from '../http/cardApi';
 import { useLocation } from 'react-router-dom';
 import { useMaskito } from '@maskito/react';
 import CardImg from "../assets/images/card.jpg"
 import rightArrow from "../assets/images/right-arrow.png"
 import leftArrow from "../assets/images/left-arrow.png"
-import { updateUserInfo } from '../http/userApi';
+import { updateUserInfo, getFavorites, deleteFromFavorites, getWillWatching, deleteFromWillWatching } from '../http/userApi';
+import Footer from '../templates/footer';
 const Profile = () => {
 
     const {user} = useContext(Context);
@@ -21,7 +22,10 @@ const Profile = () => {
     const [cards, setCards] = useState([]);
     const [subs, setSubs] = useState([]);
     const [activeSub, setActiveSub] = useState({})
-    
+    const [activeCardId, setActiveCardId] = useState(null);
+    console.log(activeSub)
+    console.log(activeCardId)
+    console.log(subs)
 
     useEffect(()=> {
         GetSubTypes().then((res) => {
@@ -34,18 +38,25 @@ const Profile = () => {
             setError("Ошибка при загрузке данных");
             console.error(error);
         });
-        getUserCard(user.user.id).then((res)=> {
-            if(res) {
-                setCards(res.data)
+        getUserCard(user.user.id).then((res) => {
+            if (res && res.data.length > 0) {
+                setCards(res.data);
+                const active = res.data.find(card => card.isActive);
+                if (active) setActiveCardId(active.id);
+            } else {
+                setCards([]);
+                setError("У вас нет добавленных карт");
             }
         }).catch((e) => {
-            setError(e.response.data.message);
-        })
+            setError(e.response?.data?.message || "Ошибка при получении карт");
+        });
         getUserSub(user.user.id).then((res) => {
-            if(res) {
-                setActiveSub(res.data)
+            if (res) {
+                setActiveSub(res.data);
             }
-        })
+        }).catch((err) => {
+            console.error('Ошибка при получении подписки пользователя:', err);
+        });
     },
     [])
 
@@ -134,12 +145,75 @@ const Profile = () => {
         localStorage.clear();
         window.location.reload()
     }
+
+    
+    const handleSetActiveCard = async () => {
+        const currentCardId = cards[cardIndex]?.id;
+
+        if (currentCardId === activeCardId) return;
+
+        try {
+            const userId = user.user.id;
+            await setActiveUserCard(userId, currentCardId);
+
+            // Явно устанавливаем активную карту
+            setActiveCardId(currentCardId);
+
+            alert("Карта сделана активной");
+        } catch (error) {
+            console.error("Ошибка при установке активной карты:", error);
+            setError("Не удалось установить активную карту");
+        }
+    };
+
+    const [favorites, setFavorites] = useState([]);
+    const [willWatching, setWillWatching] = useState([]);
+    const [historyTab, setHistoryTab] = useState('willWatching'); // для выбора текущего списка в истории
+
+    // Загружать данные при переключении на history
+    useEffect(() => {
+        if (activeSection === 'history') {
+        const userId = user.user.id;
+
+        getFavorites(userId).then(data => {
+            setFavorites(data || []);
+        }).catch(err => {
+            console.error('Ошибка загрузки избранного', err);
+        });
+
+        getWillWatching(userId).then(data => {
+            setWillWatching(data || []);
+        }).catch(err => {
+            console.error('Ошибка загрузки Буду смотреть', err);
+        });
+        }
+    }, [activeSection]);
+
+    // Удалить из избранного
+    const handleDeleteFavorite = async (filmId) => {
+        try {
+        await deleteFromFavorites(filmId, user.user.id);
+        setFavorites(prev => prev.filter(film => film.id !== filmId));
+        } catch (e) {
+        alert('Ошибка удаления из избранного');
+        }
+    };
+
+    // Удалить из Буду смотреть
+    const handleDeleteWillWatching = async (filmId) => {
+        try {
+        await deleteFromWillWatching(filmId, user.user.id);
+        setWillWatching(prev => prev.filter(film => film.id !== filmId));
+        } catch (e) {
+        alert('Ошибка удаления из "Буду смотреть"');
+        }
+    };
     return(
         
         <div className='profile'>
             <NavBar/>
             <div className="fon-profile">
-                <div className="test">123</div>
+                
                 {activeSection !== 'addCard' && (
                     <div className="profil-category">
                         <div className='container-logo'>
@@ -200,38 +274,63 @@ const Profile = () => {
                                 {cards.length > 0 ? (
                                     <div className="card-add">
                                         <div className="card-slider">
-                                            <button className="slider-arrow left" onClick={prevCard}>
-                                                <img src={leftArrow} alt="Назад" />
-                                            </button>
+                                            {cards.length > 1 && (
+                                                <button className="slider-arrow left" onClick={prevCard}>
+                                                    <img src={leftArrow} alt="Назад" />
+                                                </button>
+                                            )}
 
                                             <div className="card-preview">
                                                 <img src={CardImg} className="card-background" />
                                                 <div className="card-number">
-                                                {maskCardNumber(cards[cardIndex]?.cardNumber)}
+                                                    {maskCardNumber(cards[cardIndex]?.cardNumber)}
                                                 </div>
                                                 <div className="card-owner">
-                                                {cards[cardIndex]?.cardOwner}
+                                                    {cards[cardIndex]?.cardOwner}
                                                 </div>
+                                                
                                             </div>
 
-                                            <button className="slider-arrow right" onClick={nextCard}>
-                                                <img src={rightArrow} />
-                                            </button>
+                                            {cards.length > 1 && (
+                                                <button className="slider-arrow right" onClick={nextCard}>
+                                                    <img src={rightArrow} />
+                                                </button>
+                                            )}
                                         </div>
                                         <div className="card-actions">
-                                            <button className="delete-card-btn" onClick={handleDeleteCard}>
-                                                Удалить карту
-                                            </button>
-                                            <button className="card-button" onClick={() => setActiveSection('addCard')}>
-                                                <img src={card} />
-                                                <span>Добавить карту</span>
-                                            </button>
+                                            <div className='del-activ-card'>
+                                                <button className="delete-card-btn" onClick={handleDeleteCard}>
+                                                    Удалить карту
+                                                </button>
+                                                {
+                                                    cards[cardIndex]?.active ? (
+                                                        <div className='name-card-active'>
+                                                            карта Активна
+                                                        </div>
+                                                    ) : (
+                                                        <button
+                                                    className={`activate-card-btn ${activeCardId === cards[cardIndex]?.id ? 'active' : ''}`}
+                                                    onClick={handleSetActiveCard}
+                                                    disabled={activeCardId === cards[cardIndex]?.id}
+                                                >
+                                                    Сделать активной
+                                                </button>
+                                                    )
+                                                }
+                                            </div>
+                                            <div className='add-card-button'>
+                                                <button className="card-button" onClick={() => setActiveSection('addCard')}>
+                                                    <img src={card} />
+                                                    <span>Добавить карту</span>
+                                                </button>
+                                            </div>
                                             
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="card-add">
-                                        <button className="card-button" onClick={() => setActiveSection('addCard')}>
+                                    <div className="card-add no-cards">
+                                        <p className="no-cards-message">{error || "Карт не найдено"}</p>
+                                        <button className="card-button-add-no" onClick={() => setActiveSection('addCard')}>
                                             <img src={card} alt="card" />
                                             <span>Добавить карту</span>
                                         </button>
@@ -243,18 +342,55 @@ const Profile = () => {
 
                     {activeSection === 'history' && (
                         <div className="info-profile-user">
-                            <p className="zag-info">История просмотра</p>
-                            <div className="history-buttons">
-                                <button className="button-history">Завершённые</button>
-                                <button className="button-history button-history-viewing">
-                                    <span>Продолжить</span>
-                                    <span>просмотр</span>
-                                </button>
-                                <button className="button-history">Буду смотреть</button>
-                                <button className="button-history">Понравившиеся</button>
+                        <p className="zag-info">История просмотра</p>
+
+                        <div className="history-buttons">
+                            <button
+                            className={`button-history ${historyTab === 'willWatching' ? 'active' : ''}`}
+                            onClick={() => setHistoryTab('willWatching')}
+                            >
+                            Буду смотреть
+                            </button>
+                            <button
+                            className={`button-history ${historyTab === 'favorites' ? 'active' : ''}`}
+                            onClick={() => setHistoryTab('favorites')}
+                            >
+                            Понравившиеся
+                            </button>
+                        </div>
+
+                        {historyTab === 'willWatching' && (
+                            <div className="films-list">
+                            {willWatching.length === 0 ? (
+                                <p>Список пуст</p>
+                            ) : (
+                                willWatching.map(film => (
+                                <div key={film.id} className="film-item">
+                                    <span>{film.title}</span>
+                                    <button onClick={() => handleDeleteWillWatching(film.id)}>Удалить</button>
+                                </div>
+                                ))
+                            )}
                             </div>
+                        )}
+
+                        {historyTab === 'favorites' && (
+                            <div className="films-list">
+                            {favorites.length === 0 ? (
+                                <p>Список пуст</p>
+                            ) : (
+                                favorites.map(film => (
+                                <div key={film.id} className="film-item">
+                                    <span>{film.title}</span>
+                                    <button onClick={() => handleDeleteFavorite(film.id)}>Удалить</button>
+                                </div>
+                                ))
+                            )}
+                            </div>
+                        )}
                         </div>
                     )}
+
 
                     {activeSection === 'purchases' && (
                         <div className="info-profile-user">
@@ -293,6 +429,12 @@ const Profile = () => {
                                         </div>
                                     </div>
                                     <hr className="dashed-line" />
+
+                                    {activeSub?.subscribe?.title === sub.title ? (
+                                        <button className="button-sun-info">
+                                            Активна
+                                        </button>
+                                    ) : (
                                     <button onClick = {() => {
                                         if (sub.sale) {
                                             const order = {
@@ -316,7 +458,7 @@ const Profile = () => {
                                         }
                                     }} className="button-sun-info">
                                         Оформить
-                                    </button>
+                                    </button>)}
                                 </div>
                                 ))}
                             </div>
@@ -373,6 +515,7 @@ const Profile = () => {
                     )}
                 </div>
             </div>
+            <Footer/>
         </div>
         
     )

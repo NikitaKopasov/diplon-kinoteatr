@@ -10,6 +10,17 @@
     padding: 10px;
     color: white;
     font-size: 24px;
+    background-color: rgba(10, 35, 108, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-family: 'Poppins';
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
 }
 .logo{
     cursor: pointer;
@@ -30,6 +41,7 @@
     font-weight: 900;
     z-index: 1;
     font-size: 18px;
+    font-family: 'Poppins';
 }
 
 .header-icons {
@@ -46,6 +58,7 @@
     border-radius: 30px;
     margin-left: 50px;
     font-size: 20px;
+    font-family: 'Poppins';
 }
 .header-sub-btn:hover {
     background: linear-gradient(to right, #FF00A1, #733CE0D1, #002BFF);
@@ -56,6 +69,7 @@
 .icon-item {
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 
 #last {
@@ -67,6 +81,7 @@
 #last span {
     margin-top: 3px;
     font-size: 12px;
+    font-family: 'Poppins';
 }
 .account {
     width: 30px;
@@ -91,4 +106,96 @@
     color: white;
     background-color: rgba(1, 1, 1, 0);
     margin-left: 2vh;
+    font-family: 'Poppins';
+}
+
+/* --- 1440px и меньше --- */
+@media (max-width: 1440px) {
+    .logo {
+        margin-left: 20vh;
+    }
+
+    .header-icons {
+        margin-right: 20vh;
+    }
+}
+
+/* --- 1280px и меньше --- */
+@media (max-width: 1280px) {
+    .navbar {
+        font-size: 22px;
+        padding: 8px;
+    }
+
+    .logo {
+        margin-left: 10vh;
+    }
+
+    .header-icons {
+        margin-right: 10vh;
+    }
+
+    .header-sub-btn {
+        font-size: 18px;
+        padding: 6px 12px;
+        margin-left: 30px;
+    }
+
+    .icon {
+        margin-right: 20px;
+    }
+
+    .icon-item {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+/* --- 1024px и меньше --- */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo, .header-icons {
+        margin: 0;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .header-sub-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* --- 768px и меньше (планшеты) --- */
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 20px;
+    }
+
+    .icon-item {
+        height: 30px;
+        width: 30px;
+    }
+
+    .header-sub-btn {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .dropdown-content {
+        min-width: 150px;
+        font-size: 16px;
+    }
+
+    .header-service, .header-contacts {
+        font-size: 20px;
+        margin-left: 1vh;
+    }
 }

@@ -8,7 +8,10 @@
     align-items: center;
     position: relative; 
 }
-
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
 .info-error {
     display: flex;
     align-items: center; /* выравнивание по вертикали */
@@ -20,6 +23,7 @@
     text-align: center;
     font-size: 76px;
     font-weight: 900;
+    font-family: 'Poppins';
 }
 
 .code-error {
@@ -27,6 +31,7 @@
     font-weight: 900;
     text-align: center;
     margin-left: 5vh;
+    font-family: 'Poppins';
 }
 .number-error
 {
@@ -42,6 +47,7 @@
     border: none;
     background-color: rgba(1,1,1,0);
     color: white;
+    font-family: 'Poppins';
 }
 /* Адаптация под крупные экраны (от 1440px) */
 @media (min-width: 1440px) {

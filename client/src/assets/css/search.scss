@@ -1,0 +1,48 @@
+.fon-search
+{
+    background: radial-gradient(rgba(6, 80, 150, 1), rgba(1, 20, 44, 1));
+    background-size: cover; 
+    background-position: center;
+    min-height: 50vh;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts//Poppins-Light.ttf);
+}
+.title-search
+{
+    font-weight: 900;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 6vh;
+}
+.input-button-search
+{
+    text-align: center;
+    margin-top: 6vh;
+}
+.input-search
+{
+    width: 115vh;
+    height: 5vh;
+    border-radius: 40px;
+    border: none;
+    padding: 2vh 3vh;
+    font-size: 18px;
+}
+.btn-search
+{
+    margin-left: 2vh;
+    padding: 0.8vh 4vh;
+    border-radius: 66px;
+    background: linear-gradient(to right, #002BFF, #733CE0D1, #FF00A1);
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    border: none;
+}
+.search-container
+{
+    padding-top: 17vh;
+}

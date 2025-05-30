@@ -20,3 +20,17 @@ export const getUserSub = async(id) => {
     return activeSub;
 }
 
+export const getFilmsInSub = async (id) => {
+    const films = await $authHost.post('/sub/getFilmsInSub', {id:id});
+
+    return films;
+}
+export const createSub = async (subData) => {
+    try {
+        const response = await $authHost.post('/sub/createSub', subData);
+        return response;
+    } catch (error) {
+        console.error("Ошибка при создании подписки:", error);
+        throw error;
+    }
+};
